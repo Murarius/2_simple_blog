@@ -1,0 +1,8 @@
+Metrics/LineLength:
+  Max: 119
+#Metrics/AbcSize:
+#  Max: 20
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - '**/*.erb'
