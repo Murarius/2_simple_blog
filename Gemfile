@@ -26,8 +26,7 @@ gem 'devise'
 group :development, :test do
   gem 'pry-rails'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'byebug'
+
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
   gem 'spring'
@@ -37,6 +36,10 @@ group :development, :test do
   gem 'selenium-webdriver' # , '2.35.1'
   gem 'launchy'
   gem 'database_cleaner'
+end
+
+group :development do
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
