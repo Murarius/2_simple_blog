@@ -1,0 +1,85 @@
+header {
+  background-color: $header-background;
+  box-shadow: 0 0 15px $main-grey;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgba(#000, 0.34);
+    letter-spacing: 1px;
+    margin: 0 auto;
+    position: absolute;
+    text-transform: uppercase;
+    white-space: nowrap;
+  //  text-shadow: 0 0 2px red,0 0 2px red,0 0 2px red;
+
+    &.a {
+      left: 0;
+      top: 0;
+      transform: rotate(-2deg);
+    }
+
+    &.b {
+    //  right: 0;
+      left: 900px;
+      transform: rotate(-10deg);
+    }
+
+    &.c {
+      left: 100px;
+      top: 0;
+      transform: rotate(10deg);
+    }
+
+    &.d {
+      left: 1100px;
+      top: 20;
+    }
+
+    &.e {
+      left: 500px;
+      top: 0;
+      transform: rotate(10deg);
+    }
+  }
+
+  nav {
+    background-color: $nav-color;
+    border-bottom: 1px solid $main-grey;
+    border-top: 1px solid $main-grey;
+    bottom: 0;
+    box-shadow: 0 0 15px $main-grey inset, 0 0 15px $main-grey;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+
+    .nav-content {
+      margin: 0 auto;
+      width: 85%;
+    }
+
+    a {
+      border-right: 1px solid $main-grey;
+      color: $white;
+      display: inline-block;
+      float: right;
+      min-width: 80px;
+      padding: 5px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: rgba($white, .2);
+      color: $black;
+
+    }
+
+    a:last-of-type {
+      border-left: 1px solid $main-grey;
+    }
+  }
+}

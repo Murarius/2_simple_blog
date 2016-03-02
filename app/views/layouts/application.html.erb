@@ -7,8 +7,8 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <p class='notice'><%= notice %></p>
-    <p class='alert'><%= alert %></p>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/main' %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

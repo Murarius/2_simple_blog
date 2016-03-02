@@ -1,0 +1,21 @@
+.sidebar {
+  border-left: 1px solid $main-grey;
+  box-sizing: border-box;
+  width: 20%;
+  height: 100%;
+  float: right;
+  min-height: 70vh;
+
+  li {
+    list-style: none;
+  }
+}
+
+.year {
+  font-size: 20px;
+  font-weight: bold;
+}
+.month {
+  font-size: 16px;
+  font-style: italic;
+}
