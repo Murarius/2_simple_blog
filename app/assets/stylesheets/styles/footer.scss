@@ -1,13 +1,6 @@
-footer .content {
-  border-top: 1px solid $main-grey;
-  height: 50px;
-  margin: 50px auto 0;
-  width: 85%;
-
-  p {
-    display: inline-block;
-    font-size: 10px;
-    font-style: italic;
-    margin-left: 20px;
-  }
+footer {
+  background-color: $black;
+  color: $white;
+  display: block;
+  height: 200px;
 }

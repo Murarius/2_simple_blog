@@ -1,10 +1,27 @@
 .main {
-  margin: 0 auto;
+  background-color: $white;
+  background-image: url('body-background.svg');
+  background-repeat: repeat;
+  box-shadow: inset 80px 0 70px -70px rgba($black, .4),
+              inset -80px 0 70px -70px rgba($black, .4);
+  overflow: hidden;
   position: relative;
-  width: 85%;
+}
 
-  .content {
-    float: left;
-    width: 80%;
-  }
+.main-content {
+  background-color: $white;
+  box-shadow: 5px 0 15px 8px rgba($black, .2),
+              -5px 0 15px 8px rgba($black, .2);
+  margin: 0 auto;
+  min-height: 65vh;
+  width: 85%;
+}
+
+.footer-border {
+  background-image: url('footer-border.svg');
+  background-repeat: repeat-x;
+  bottom: 0;
+  height: 10px;
+  position: absolute;
+  width: 100%;
 }
