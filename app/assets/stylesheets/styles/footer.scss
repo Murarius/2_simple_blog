@@ -2,5 +2,40 @@ footer {
   background-color: $black;
   color: $white;
   display: block;
-  height: 200px;
+  font-family: 'Orbitron';
+  height: 160px;
+}
+
+.footer-content {
+  margin: 0 auto;
+  width: 85%;
+}
+
+.footer-menus {
+  display: flex;
+  font-style: italic;
+  justify-content: space-around;
+  letter-spacing: 2px;
+  line-height: 25px;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+.author {
+  color: $author-color;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 900;
+  text-align: right;
 }

@@ -1,0 +1,6 @@
+@mixin logo-letter($font-size, $top, $left, $z-index) {
+  font-size: $font-size;
+  left: $left;
+  top: $top;
+  z-index: $z-index
+}
