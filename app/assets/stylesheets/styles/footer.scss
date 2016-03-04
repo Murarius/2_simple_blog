@@ -1,9 +1,11 @@
 footer {
-  background-color: $black;
+  background-color: $light-black;
   color: $white;
   display: block;
-  font-family: 'Orbitron';
+  font-family: 'Dosis';
+
   height: 160px;
+  font-size: 14px;
 }
 
 .footer-content {
@@ -40,9 +42,12 @@ footer {
 
 .author {
   color: $author-color;
+  font-family: 'Orbitron';
   font-size: 10px;
   font-style: italic;
   font-weight: 900;
+  letter-spacing: 1px;
   margin-bottom: 10px;
   text-align: right;
+
 }

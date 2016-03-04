@@ -1,8 +1,36 @@
 
 .sidebar {
+  font-family: 'Dosis';
   margin: 50px;
   padding: 5px 30px;
   position: relative;
+
+
+  h2 {
+    color: darken($main-color, 10%);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 20px;
+  }
+
+  a {
+    color: $main-color;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: darken($main-color, 30%);
+    }
+  }
 }
 
 .sidebar-content-placeholder {

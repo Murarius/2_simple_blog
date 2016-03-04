@@ -98,7 +98,7 @@ header {
   z-index: 5;
 
   .top-title-border {
-    background-image: url('footer-border-red.svg');
+    background-image: url('title-border-red.svg');
     background-repeat: repeat-x;
     height: 10px;
     position: absolute;
@@ -107,7 +107,7 @@ header {
   }
 
   .bottom-title-border {
-    background-image: url('footer-border-red.svg');
+    background-image: url('title-border-red.svg');
     background-repeat: repeat-x;
     bottom: 0;
     height: 10px;

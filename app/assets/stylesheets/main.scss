@@ -1,5 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Orbitron:400,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Orbitron:900);
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Dosis:700,400);
 
 @import 'font-awesome';
 
@@ -8,8 +9,8 @@
 @import 'base/mixins';
 @import 'base/global';
 
-
 @import 'styles/header';
 @import 'styles/footer';
 @import 'styles/main';
 @import 'styles/sidebar';
+@import 'styles/post';
