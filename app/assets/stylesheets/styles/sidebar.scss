@@ -1,1 +1,18 @@
 
+.sidebar {
+  margin: 50px;
+  padding: 5px 30px;
+  position: relative;
+}
+
+.sidebar-content-placeholder {
+  background-image: url('border-sidebar.svg');
+  background-repeat: repeat-y;
+  box-shadow: -8px 0 0 0 $main-color;
+  box-sizing: border-box;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 10px;
+}

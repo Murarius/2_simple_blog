@@ -18,8 +18,14 @@ footer {
   letter-spacing: 2px;
   line-height: 25px;
 
+  h2 {
+    color: $main-color;
+    margin-bottom: 0;
+  }
+
   li {
-    list-style: none;
+    color: $main-color;
+    list-style: square;
   }
 
   a {
@@ -27,7 +33,7 @@ footer {
     text-decoration: none;
 
     &:hover {
-      color: $main-color;
+      color: lighten($title-background, 20%);
     }
   }
 }
@@ -37,5 +43,6 @@ footer {
   font-size: 10px;
   font-style: italic;
   font-weight: 900;
+  margin-bottom: 10px;
   text-align: right;
 }

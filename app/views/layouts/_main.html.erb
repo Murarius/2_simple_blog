@@ -1,6 +1,11 @@
 <div class='main'>
   <div class='main-content'>
-    main
+    <div class='yield-placeholder'>
+      <%= yield %>
+    </div>
+    <div class='sidebar-placeholder'>
+      <%= render 'layouts/sidebar' %>
+    </div>
   </div>
-  <div class='footer-border'></div>
+  <div class='footer-border' style='clear: both'></div>
 </div>
