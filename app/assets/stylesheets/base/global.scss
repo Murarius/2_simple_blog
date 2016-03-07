@@ -41,10 +41,34 @@ body {
     }
 
     &:hover {
-
-      left: 0;
       border-width: 4px;
+      left: 0;
       transition: left .3s, border-width .3s;
     }
   }
+}
+
+.flash {
+  font-weight: bold;
+  margin: 20px auto;
+  width: 80%;
+
+  i {
+    margin-right: 10px;
+  }
+
+  .alert-alert {
+    background-color: lighten($title-background, 30%);
+    border: 2px solid $title-background;
+    color: $title-background;
+    padding: 10px;
+  }
+
+  .alert-notice {
+    background-color: lighten($notice-background, 30%);
+    border: 2px solid $notice-background;
+    color: $notice-background;
+    padding: 10px;
+  }
+
 }
