@@ -1,4 +1,50 @@
 body {
   background-color: $light-black;
+  font-family: 'Dosis';
   overflow-x: hidden;
+}
+
+.log-in-out-menu {
+  font-size: 20px;
+  left: 0;
+  position: fixed;
+  top: 100px;
+  z-index: 6;
+
+  a {
+    text-align: center;
+    box-sizing: border-box;
+    width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    left: -110px;
+    transition: left .3s, border-width .3s;
+
+    background-color: darken($white, 10%);
+    border: {
+      style: solid;
+      color: $title-background;
+      width: 4px 12px 4px 4px;
+    }
+
+    color: $title-background;
+    display: block;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    i {
+      width: 30px;
+    }
+
+    &:hover {
+
+      left: 0;
+      border-width: 4px;
+      transition: left .3s, border-width .3s;
+    }
+  }
 }
