@@ -1,0 +1,22 @@
+<h2 class='form-header'>New Post:</h2>
+
+<%= form_for @post do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_area :content, row: 5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_area :more_content, row: 5 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Accept", class: 'button' %>
+  </div>
+<% end -%>

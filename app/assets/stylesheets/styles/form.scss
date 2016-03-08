@@ -25,7 +25,8 @@
   }
 }
 
-input {
+input,
+textarea {
   border: 2px solid $main-color;
   box-sizing: border-box;
   display: inline-block;
@@ -52,4 +53,10 @@ label {
   font-weight: bold;
   text-transform: uppercase;
   width: 150px;
+}
+
+
+// ckeditor
+.field.ckeditor {
+  width: 100%;
 }

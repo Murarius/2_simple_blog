@@ -12,29 +12,28 @@ body {
   z-index: 6;
 
   a {
-    text-align: center;
-    box-sizing: border-box;
-    width: 120px;
-    overflow: hidden;
-    white-space: nowrap;
-    position: absolute;
-    top: 0;
-    left: -110px;
-    transition: left .3s, border-width .3s;
-
     background-color: darken($white, 10%);
     border: {
-      style: solid;
       color: $title-background;
+      style: solid;
       width: 4px 12px 4px 4px;
     }
-
+    box-sizing: border-box;
     color: $title-background;
     display: block;
     font-weight: bold;
+    left: -110px;
+    overflow: hidden;
     padding: 5px;
+    position: absolute;
+
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    top: 0;
+    transition: left .3s, border-width .3s;
+    white-space: nowrap;
+    width: 120px;
 
     i {
       width: 30px;
@@ -42,7 +41,7 @@ body {
 
     &:hover {
       border-width: 4px;
-      left: 0;
+      left: -8px;
       transition: left .3s, border-width .3s;
     }
   }
