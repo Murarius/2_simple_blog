@@ -95,7 +95,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
   def log_in(user_email, user_password)
-    find('.log-in-out-menu a').click
+    first('.log-in-out-menu a').click
     fill_in 'Email', with: user_email
     fill_in 'Password', with: user_password
     find('.actions').find('.button').click

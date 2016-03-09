@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'LoginsLogouts', type: :feature do
-  # flash
   before do
     @password = 'test1234'
     @user = FactoryGirl.create(:user, password: @password)
@@ -14,6 +13,7 @@ RSpec.feature 'LoginsLogouts', type: :feature do
       log_in(@user.email, @password)
       expect(page).to have_content('Signed in successfully.')
       expect(page).to have_content('Log out')
+      expect(page).to have_content('Add Post')
     end
 
     it 'fails with invalid data' do
@@ -28,7 +28,7 @@ RSpec.feature 'LoginsLogouts', type: :feature do
       visit root_path
       log_in(@user.email, @password)
       expect(page).to have_content('Log out')
-      find('.log-in-out-menu a').click
+      first('.log-in-out-menu a').click
       expect(page).to have_content('Signed out successfully.')
     end
   end
