@@ -11,6 +11,12 @@ RSpec.describe PostsController, type: :controller do
     it 'with success' do
       get :show, id: @post.id
       expect(response).to have_http_status(:success)
+      expect(response.body).to have_content(@post.title)
+    end
+
+    it 'rerurns more content field' do
+      get :show, id: @post.id
+      expect(response.body).to have_content(@post.more_content)
     end
   end
 
@@ -25,7 +31,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'GET #edit' do
     it 'with success' do
-      get :edit
+      get :edit, id: @post.id
       expect(response).to have_http_status(:success)
     end
   end
