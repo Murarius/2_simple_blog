@@ -13,16 +13,6 @@
   margin: 0 auto 10px;
   text-align: center;
   width: 60%;
-
-  a {
-    color: $main-color;
-    font-weight: bold;
-    text-decoration: none;
-
-    &:hover {
-      color: darken($main-color, 20%);
-    }
-  }
 }
 
 input,
@@ -48,11 +38,19 @@ label {
 
 .button {
   background-color: $main-color;
-  border-color: darken($main-color, 20%);
+  border: 2px solid darken($main-color, 20%);
   color: darken($main-color, 30%);
+  display: inline-block;
   font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
   text-transform: uppercase;
   width: 150px;
+
+  &:hover {
+    background-color: darken($main-color, 10%);
+  }
 }
 
 
