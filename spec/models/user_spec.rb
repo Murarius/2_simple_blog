@@ -15,4 +15,13 @@ RSpec.describe User, type: :model do
 
     expect(user.posts.count).to eq 1
   end
+
+  it 'when destroyed deletes all posts too' do
+    user = FactoryGirl.create(:user)
+    post = FactoryGirl.create(:post, user: user)
+    post_id = post.id
+
+    user.destroy
+    expect { Post.find(post_id) }.to raise_error ActiveRecord::RecordNotFound
+  end
 end
