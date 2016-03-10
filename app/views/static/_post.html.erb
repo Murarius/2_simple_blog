@@ -8,7 +8,7 @@
     <%= post.title %>
   </div>
   <div class='post-content'>
-    <%= post.content %>
+    <%= post.content.html_safe %>
   </div>
   <%= link_to 'Read more..', post, class: 'read-more' %>
 </div>
