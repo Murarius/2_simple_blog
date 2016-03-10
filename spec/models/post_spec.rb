@@ -9,10 +9,25 @@ RSpec.describe Post, type: :model do
     expect(subject).to respond_to(:user)
   end
 
-  it 'belongs to User' do
-    user = FactoryGirl.create(:user)
-    post = FactoryGirl.create(:post, user: user)
+  describe 'to be valid' do
+    let(:post) { FactoryGirl.build(:post) }
 
+    it 'must have title' do
+      expect { post.title = nil }.to change { post.valid? }.from(true).to(false)
+    end
+
+    it 'must have content' do
+      expect { post.content = nil }.to change { post.valid? }.from(true).to(false)
+    end
+
+    it 'must have user' do
+      expect { post.user = nil }.to change { post.valid? }.from(true).to(false)
+    end
+  end
+
+  it 'belongs to User' do
+    user = FactoryGirl.build(:user)
+    post = FactoryGirl.build(:post, user: user)
     expect(post.user).to eq user
   end
 end
