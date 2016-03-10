@@ -1,6 +1,7 @@
 body {
   background-color: $light-black;
   font-family: 'Dosis';
+  font-size: 16px;
   overflow-x: hidden;
 }
 
@@ -69,5 +70,4 @@ body {
     color: $notice-background;
     padding: 10px;
   }
-
 }
