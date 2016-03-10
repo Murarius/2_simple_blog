@@ -10,7 +10,7 @@ RSpec.feature 'LoginsLogouts', type: :feature do
     it 'succeses with valid data' do
       visit root_path
       expect(page).not_to have_content('Log out')
-      log_in(@user.email, @password)
+      log_in(@user)
       expect(page).to have_content('Signed in successfully.')
       expect(page).to have_content('Log out')
       expect(page).to have_content('Add Post')
@@ -18,7 +18,10 @@ RSpec.feature 'LoginsLogouts', type: :feature do
 
     it 'fails with invalid data' do
       visit root_path
-      log_in('missing user email', 'missing password')
+      first('.log-in-out-menu a').click
+      fill_in 'Email', with: 'missing user email'
+      fill_in 'Password', with: 'missing password'
+      find('.actions').find('.button').click
       expect(page).to have_content('Invalid email or password.')
     end
   end
@@ -26,7 +29,7 @@ RSpec.feature 'LoginsLogouts', type: :feature do
   describe 'logout' do
     it 'successes' do
       visit root_path
-      log_in(@user.email, @password)
+      log_in(@user)
       expect(page).to have_content('Log out')
       first('.log-in-out-menu a').click
       expect(page).to have_content('Signed out successfully.')

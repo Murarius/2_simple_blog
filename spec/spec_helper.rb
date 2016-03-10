@@ -94,10 +94,14 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-  def log_in(user_email, user_password)
-    first('.log-in-out-menu a').click
-    fill_in 'Email', with: user_email
-    fill_in 'Password', with: user_password
-    find('.actions').find('.button').click
+  def log_in(user, options = {})
+    if options[:no_capybara]
+      sign_in user
+    else
+      first('.log-in-out-menu a').click
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      find('.actions').find('.button').click
+    end
   end
 end
