@@ -4,5 +4,9 @@ Metrics/LineLength:
 #  Max: 20
 Rails:
   Enabled: true
+#  Exclude:
+#    - '**/*.erb'
+
+AllCops:
   Exclude:
     - '**/*.erb'
