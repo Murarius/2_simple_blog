@@ -1,0 +1,24 @@
+.errors {
+  color: darken($title-background, 10%);
+  margin: 0 auto;
+  width: 90%;
+
+  h2 {
+    background-color: lighten($title-background, 30%);
+    border: 2px solid darken($title-background, 10%);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    text-transform: uppercase;
+  }
+
+  li {
+    font-style: italic;
+    font-weight: bolder;
+  }
+}
+
+.field_with_errors input,
+.field_with_errors .cke {
+  border: 2px solid darken($title-background, 10%) !important;
+}

@@ -1,4 +1,5 @@
 <%= form_for post do |f| %>
+  <%= render 'shared/errors', object: post %>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title, autofocus: true %>
