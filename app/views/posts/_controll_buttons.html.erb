@@ -1,0 +1,9 @@
+<div class='controll-buttons'>
+  <%= link_to edit_post_path(post), class: 'button edit' do %>
+    <i class="fa fa-pencil-square-o"></i> Edit
+  <% end %>
+
+  <%= link_to post_path(post), class: 'button delete', method: :delete do %>
+    <i class="fa fa-times"></i> Delete
+  <% end %>
+</div>
