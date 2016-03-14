@@ -67,3 +67,24 @@
     color: darken($main-color, 30%);
   }
 }
+
+.controll-buttons {
+  text-align: right;
+
+  .button {
+    font-size: 12px;
+    width: 80px;
+
+    i {
+      padding-right: 5px;
+    }
+
+    &.edit {
+      @include paint-button($warning-color)
+    }
+
+    &.delete {
+      @include paint-button($danger-color)
+    }
+  }
+}

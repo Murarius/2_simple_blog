@@ -2,5 +2,13 @@
   font-size: $font-size;
   left: $left;
   top: $top;
-  z-index: $z-index
+  z-index: $z-index;
+}
+
+@mixin paint-button($color) {
+  background-color: $color;
+
+  &:hover {
+    background-color: darken($color, 10%);
+  }
 }
