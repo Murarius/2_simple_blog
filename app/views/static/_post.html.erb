@@ -10,5 +10,7 @@
   <div class='post-content'>
     <%= post.content.html_safe %>
   </div>
-  <%= link_to 'Read more..', post, class: 'read-more' %>
+  <% unless post.more_content.empty? -%>
+    <%= link_to 'Read more..', post, class: 'read-more' %>
+  <% end -%>
 </div>
