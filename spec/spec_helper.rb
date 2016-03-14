@@ -98,10 +98,10 @@ RSpec.configure do |config|
     if options[:no_capybara]
       sign_in user
     else
-      first('.log-in-out-menu a').click
+      find_link('', href: '/login').click
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
-      find('.actions').find('.button').click
+      find('input[type=submit]').click
     end
   end
 end
