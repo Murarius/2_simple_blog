@@ -1,0 +1,7 @@
+<div class='posts'>
+  <%= paginate @posts, remote: true %>
+  <% @posts.each do |post| -%>
+    <%= render post %>
+  <% end -%>
+  <%= paginate @posts, remote: true %>
+</div>

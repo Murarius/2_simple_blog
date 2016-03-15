@@ -1,0 +1,37 @@
+.pagination {
+  padding: 20px;
+  text-align: center;
+
+  span {
+    background: $author-color;
+    border-radius: 2px;
+    color: $white;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 3px;
+    width: 40px;
+
+    &.current {
+      color: $black;
+      line-height: 25px;
+    }
+
+    &:hover {
+      background: darken($author-color, 20%);
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+  }
+
+  .first,
+  .prev,
+  .next,
+  .last {
+    width: 60px;
+  }
+}

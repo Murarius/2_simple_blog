@@ -11,12 +11,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
-gem 'kaminari'
 gem 'devise'
 
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'kaminari'
 # gem 'client_side_validations', '~> 4.2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
