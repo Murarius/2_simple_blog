@@ -6,9 +6,9 @@ FactoryGirl.define do
   end
 
   factory :post do
-    title 'Test title'
-    content 'Lorem ipsum'
-    more_content 'more Lorem ipsum'
+    sequence(:title) { |n| "Post title #{n}" }
+    sequence(:content) { |n| "Post content #{n}" }
+    sequence(:more_content) { |n| "More post content #{n}" }
     user
   end
 end
