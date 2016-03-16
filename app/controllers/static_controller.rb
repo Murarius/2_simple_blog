@@ -1,8 +1,8 @@
 # class StaticController < ApplicationController
 class StaticController < ApplicationController
   def home
-    # @posts = Post.all
-    @posts = Post.page params[:page]
+    @posts = Post.order_by_created_at.from_year(params[:year]).page params[:page]
+    @post_counts_by_year = Post.post_counts_by_year
 
     respond_to do |format|
       format.html
