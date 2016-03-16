@@ -44,3 +44,15 @@
   top: 0;
   width: 10px;
 }
+
+.year {
+  a {
+    padding: 0 3px;
+  }
+
+  span {
+    color: $black;
+    font-weight: bold;
+
+  }
+}
