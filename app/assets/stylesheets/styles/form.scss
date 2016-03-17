@@ -39,6 +39,7 @@ label {
 .button {
   background-color: $main-color;
   border: 2px solid darken($main-color, 20%);
+  box-sizing: border-box;
   color: darken($main-color, 30%);
   display: inline-block;
   font-weight: bold;
@@ -46,7 +47,7 @@ label {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  width: 150px;
+  width: 200px;
 
   &:hover {
     background-color: darken($main-color, 10%);

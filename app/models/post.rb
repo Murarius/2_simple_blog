@@ -17,6 +17,8 @@ class Post < ActiveRecord::Base
     where("to_char(created_at, 'YYYY') = ?", year.to_s) if year
   end
 
+  scope :new_posts, -> { order('created_at').limit(5) }
+
   scope :counts_by_month, ->(year) do
     select("to_char(created_at, 'Month') as month, to_char(created_at, 'MM') as month_number, count(*) as count")
       .where("to_char(created_at, 'YYYY') = ?", year.to_s)

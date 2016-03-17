@@ -2,8 +2,11 @@
   <div class='sidebar-content-placeholder'></div>
   <h2>New posts</h2>
   <ul>
-    <li><a href='#'>Losdfc</a></li>
-    <li><a href='#'>Masetg</a></li>
-    <li><a href='#'>Fasntr</a></li>
+    <% @new_posts.to_a.each do |post| -%>
+      <li class='new-post'>
+        <%= link_to post.title, post  %>
+        <div>created <%= time_ago_in_words(post.created_at) %> ago</div>
+      </li>
+    <% end %>
   </ul>
 </div>
