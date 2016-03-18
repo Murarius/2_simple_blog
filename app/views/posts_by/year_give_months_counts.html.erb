@@ -1,0 +1,10 @@
+<ul>
+  <% @posts_counts_in_months.each do |elem| %>
+    <li class='month'>
+      <%= link_to root_path(year: @year, month: elem[:month]) do %>
+        <%= elem[:month] %>
+      <% end -%>
+      <span><%= "(#{elem[:count]})" %></span>
+    </li>
+  <% end -%>
+</ul>
