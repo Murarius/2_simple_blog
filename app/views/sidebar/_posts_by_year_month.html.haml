@@ -4,7 +4,8 @@
   %ul
     - @post_counts_by_year.to_a.each do |record|
       %li.year
-        = link_to record[:year], root_path(year: record[:year]), class: 'to_year'
+        = link_to record[:year], root_path(year: record[:year]),
+                                 class: 'to_year'
         %span= "(#{record[:count]})"
-        = link_to '#', class: 'months', id: "#{record[:year]}" do
-          %i{class: ["fa", "fa-caret-right", "fa-lg"]}
+        = link_to '#', class: 'months', id: record[:year].to_s do
+          %i{ class: ['fa', 'fa-caret-right', 'fa-lg'] }

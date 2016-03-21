@@ -7,11 +7,11 @@
   .field.ckeditor
     = f.label :content
     %br/
-    = f.cktext_area :content, :ckeditor => {:language => 'en'}
+    = f.cktext_area :content, ckeditor: { language: 'en' }
   .field.ckeditor
     = f.label :more_content
     %br/
-    = f.cktext_area :more_content, :ckeditor => {:language => 'en'}
+    = f.cktext_area :more_content, ckeditor: { language: 'en' }
   .actions
     = f.button(type: 'submit', class: 'button') do
       %i.fa.fa-check

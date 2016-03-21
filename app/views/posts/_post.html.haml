@@ -7,13 +7,13 @@
     = post.title
   .post-content
     = post.content.html_safe
-    %div{style: 'clear:both'}
-  - if request.env['PATH_INFO']=='/'
+    %div{ style: 'clear:both' }
+  - if request.env['PATH_INFO'] == '/'
     = link_to('Read more..', post, class: 'read-more') unless post.more_content.try(:empty?)
   - else
     .post-content
       = @post.more_content.html_safe
-      %div{style: 'clear:both'}
+      %div{ style: 'clear:both' }
     = link_to root_path, class: 'button' do
       %i.fa.fa-chevron-left
       Back to Posts

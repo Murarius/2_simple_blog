@@ -8,15 +8,15 @@
   %body
     .log-in-out-menu
       - if user_signed_in?
-        %a{"data-method" => "delete", :href => destroy_user_session_path}
-          %i.fa.fa-unlock>
+        %a{ 'data-method' => 'delete', href: destroy_user_session_path }
+          %i.fa.fa-unlock
           Log out
-        %a{:href => new_post_path}
-          %i.fa.fa-plus>
+        %a{ href: new_post_path }
+          %i.fa.fa-plus
           Add Post
       - else
-        %a{:href => new_user_session_path}
-          %i.fa.fa-lock>
+        %a{ href: new_user_session_path }
+          %i.fa.fa-lock
           Log in
     = render 'layouts/header'
     = render 'layouts/main'
