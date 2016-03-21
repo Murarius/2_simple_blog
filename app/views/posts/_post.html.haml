@@ -1,0 +1,18 @@
+.post
+  .post-date
+    %p.post-date-day= post.created_at.strftime('%d')
+    %p.post-date-month= post.created_at.strftime('%b')
+    %p.post-date-year= post.created_at.strftime('%Y')
+  .post-title
+    = post.title
+  .post-content
+    = post.content.html_safe
+  - if request.env['PATH_INFO']=='/'
+    = link_to('Read more..', post, class: 'read-more') unless post.more_content.try(:empty?)
+  - else
+    .post-content
+      = @post.more_content.html_safe
+    = link_to root_path, class: 'button' do
+      %i.fa.fa-chevron-left
+      Back to Posts
+  = render('posts/controll_buttons', post: post) if user_signed_in?

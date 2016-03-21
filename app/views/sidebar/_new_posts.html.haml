@@ -1,0 +1,8 @@
+.sidebar
+  .sidebar-content-placeholder
+  %h2 New posts
+  %ul
+    - @new_posts.to_a.each do |post|
+      %li.new-post
+        = link_to post.title, post
+        %div "created #{time_ago_in_words(post.created_at)} ago"

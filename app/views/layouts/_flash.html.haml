@@ -1,0 +1,9 @@
+- flash.each do |key, value|
+  - if key == 'alert'
+    = content_tag(:div, class: "alert alert-#{key}") do
+      %i.fa.fa-exclamation-triangle
+      = value
+  - else
+    = content_tag(:div, class: "alert alert-#{key}") do
+      %i.fa.fa-check
+      = value

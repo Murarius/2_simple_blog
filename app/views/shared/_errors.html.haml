@@ -1,0 +1,6 @@
+.errors
+  - if object.errors.any?
+    %h2= "there is #{pluralize(object.errors.count, 'error')} on this form"
+    %ul
+      - object.errors.each do |key, value|
+        %li= "#{ key } #{ value }"

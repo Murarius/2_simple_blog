@@ -1,0 +1,7 @@
+.controll-buttons
+  = link_to edit_post_path(post), class: 'button edit' do
+    %i.fa.fa-pencil-square-o
+    Edit
+  = link_to post_path(post), class: 'button delete', method: :delete do
+    %i.fa.fa-times
+    Delete

@@ -1,0 +1,6 @@
+%ul
+  - @posts_counts_in_months.each do |elem|
+    %li.month
+      = link_to root_path(year: @year, month: elem[:month]) do
+        = elem[:month]
+      %span= "(#{elem[:count]})"

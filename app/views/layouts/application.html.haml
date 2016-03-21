@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title SomeBlog
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .log-in-out-menu
+      - if user_signed_in?
+        %a{"data-method" => "delete", :href => destroy_user_session_path}
+          %i.fa.fa-unlock>
+          Log out
+        %a{:href => new_post_path}
+          %i.fa.fa-plus>
+          Add Post
+      - else
+        %a{:href => new_user_session_path}
+          %i.fa.fa-lock>
+          Log in
+    = render 'layouts/header'
+    = render 'layouts/main'
+    = render 'layouts/footer'

@@ -1,0 +1,9 @@
+.main
+  .main-content
+    .yield-placeholder
+      .flash
+        = render 'layouts/flash'
+      = yield
+    .sidebar-placeholder
+      = render 'layouts/sidebar'
+  .footer-border{:style => "clear: both"}

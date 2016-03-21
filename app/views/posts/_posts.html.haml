@@ -1,0 +1,5 @@
+.posts
+  = paginate @posts, remote: true
+  - @posts.each do |post|
+    = render post
+  = paginate @posts, remote: true
