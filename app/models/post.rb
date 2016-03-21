@@ -6,10 +6,28 @@ class Post < ActiveRecord::Base
   validates :content, presence: true
   validates :user, presence: true
 
+  @months = { 'January' => '01',
+              'February' => '02',
+              'March' => '03',
+              'April' => '04',
+              'May' => '05',
+              'June' => '06',
+              'July' => '07',
+              'August' => '08',
+              'September' => '09',
+              'October' => '10',
+              'November' => '11',
+              'December' => '12' }
+
   scope :order_by_created_at, -> { order('created_at DESC') }
   scope :new_posts, -> { order('created_at').limit(5) }
+
   scope :from_year, ->(year = nil) do
     where("to_char(created_at, 'YYYY') = ?", year.to_s) if year
+  end
+
+  scope :from_month, ->(month = nil) do
+    where("to_char(created_at, 'MM') = ?", @months[month]) if month
   end
 
   def self.post_counts_by_year
