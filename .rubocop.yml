@@ -7,6 +7,6 @@ Rails:
 #  Exclude:
 #    - '**/*.erb'
 
-AllCops:
-  Exclude:
-    - '**/*.erb'
+#AllCops:
+#  Exclude:
+#    - '**/*.erb'
