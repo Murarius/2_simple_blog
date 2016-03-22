@@ -49,14 +49,14 @@ RSpec.describe Post, type: :model do
 
     it 'counts_by_year brings valid data' do
       FactoryGirl.create(:post, user: @user, created_at: Date.new(2012))
-      expect(Post.counts_by_year[1][:year]).to eq '2012' # 1 index - last element
-      expect(Post.counts_by_year[1][:count]).to eq 2
+      expect(Post.counts_by_years[1][:year]).to eq '2012' # 1 index - last element
+      expect(Post.counts_by_years[1][:count]).to eq 2
     end
 
     it 'counts_by_month brings valid data' do
       3.times { FactoryGirl.create(:post, user: @user, created_at: Date.new(2013, 1, 1)) }
-      expect(Post.counts_by_month(2013).first.month).to eq 'January  '
-      expect(Post.counts_by_month(2013).first.count).to eq 3
+      expect(Post.counts_by_months(2013).first.month).to eq 'January'
+      expect(Post.counts_by_months(2013).first.count).to eq 3
     end
   end
 end
