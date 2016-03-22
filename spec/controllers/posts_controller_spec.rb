@@ -136,5 +136,33 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe 'DELETE #destroy'
+  describe 'DELETE #destroy' do
+    describe 'when not looged in' do
+      it 'redirects to root with message' do
+        post :destroy, id: @post.id
+        expect(response).to have_http_status(302)
+        expect(flash.first[0]).to eq 'alert'
+        expect(flash.first[0]).to eq 'You need to sign in or sign up before continuing.'
+      end
+    end
+
+    describe 'when looged in' do
+      before do
+        log_in(@post.user, no_capybara: true)
+      end
+
+      it 'deletes record' do
+        expect do
+          post :destroy, id: @post.id
+        end.to change { Post.all.count }.by(-1)
+      end
+
+      it 'redirects to with message' do
+        post :destroy, id: @post.id
+        expect(response).to have_http_status(302)
+        expect(flash.first[0]).to eq 'notice'
+        expect(flash.first[1]).to ew 'Post deleted'
+      end
+    end
+  end
 end
