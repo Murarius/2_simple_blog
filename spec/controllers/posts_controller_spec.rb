@@ -142,7 +142,7 @@ RSpec.describe PostsController, type: :controller do
         post :destroy, id: @post.id
         expect(response).to have_http_status(302)
         expect(flash.first[0]).to eq 'alert'
-        expect(flash.first[0]).to eq 'You need to sign in or sign up before continuing.'
+        expect(flash.first[1]).to eq 'You need to sign in or sign up before continuing.'
       end
     end
 
@@ -161,7 +161,7 @@ RSpec.describe PostsController, type: :controller do
         post :destroy, id: @post.id
         expect(response).to have_http_status(302)
         expect(flash.first[0]).to eq 'notice'
-        expect(flash.first[1]).to ew 'Post deleted'
+        expect(flash.first[1]).to eq 'Post deleted.'
       end
     end
   end
