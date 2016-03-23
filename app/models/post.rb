@@ -20,15 +20,9 @@ class Post < ActiveRecord::Base
               'December' => '12' }
 
   scope :order_by_created_at, -> { order('created_at DESC') }
-  scope :new_posts, -> { order('created_at').limit(5) }
-
-  scope :from_year, ->(year = nil) do
-    where("to_char(created_at, 'YYYY') = ?", year.to_s) if year
-  end
-
-  scope :from_month, ->(month = nil) do
-    where("to_char(created_at, 'MM') = ?", @months[month]) if month
-  end
+  scope :new_posts, -> { select('id, title, created_at').order('created_at').limit(5) }
+  scope :from_year, ->(year = nil) { where("to_char(created_at, 'YYYY') = ?", year.to_s) if year }
+  scope :from_month, ->(month = nil) { where("to_char(created_at, 'MM') = ?", @months[month]) if month }
 
   scope :counts_by_years, -> do
     select("to_char(created_at, 'YYYY') as year, count(*) as count")
@@ -45,6 +39,6 @@ class Post < ActiveRecord::Base
   end
 
   def self.load_to_home(year, month, page)
-    Post.order_by_created_at.from_year(year).from_month(month).page page
+    Post.from_year(year).from_month(month).order_by_created_at.page page
   end
 end
