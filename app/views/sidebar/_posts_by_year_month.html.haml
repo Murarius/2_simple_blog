@@ -2,7 +2,7 @@
   .sidebar-content-placeholder
   %h2 Posts by years
   %ul
-    - @post_counts_by_year.to_a.each do |record|
+    - @sidebar.posts_counts_by_years.to_a.each do |record|
       %li.year
         = link_to record[:year], root_path(year: record[:year]),
                                  class: 'to_year'

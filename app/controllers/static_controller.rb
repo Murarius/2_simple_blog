@@ -2,8 +2,7 @@
 class StaticController < ApplicationController
   def home
     @posts = Post.load_to_home(params[:year], params[:month], params[:page])
-    @post_counts_by_year = Post.counts_by_years
-    @new_posts = Post.new_posts
+    @sidebar = load_sidebar
 
     respond_to do |format|
       format.html

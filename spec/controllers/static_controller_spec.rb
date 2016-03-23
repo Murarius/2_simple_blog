@@ -45,19 +45,4 @@ RSpec.describe StaticController, type: :controller do
       end
     end
   end
-
-  describe 'sidebar' do
-    describe 'posts by years' do
-      before do
-        user_id = User.first.id
-        date = Date.new(2012)
-        4.times { FactoryGirl.create(:post, user_id: user_id, created_at: date) }
-      end
-
-      it 'renders proper posts counts by year' do
-        get :home
-        expect(response.body).to have_content('2012 (4)')
-      end
-    end
-  end
 end

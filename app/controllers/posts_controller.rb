@@ -1,12 +1,15 @@
 # class PostsController < ApplicationController
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+
   def show
     @post = Post.find(params[:id])
+    @sidebar = load_sidebar
   end
 
   def new
     @post = Post.new
+    @sidebar = load_sidebar
   end
 
   def create
@@ -14,12 +17,14 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path, notice: 'Post created.'
     else
+      @sidebar = load_sidebar
       render 'new'
     end
   end
 
   def edit
     @post = Post.find(params[:id])
+    @sidebar = load_sidebar
   end
 
   def update
@@ -27,6 +32,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to root_path, notice: 'Post updated.'
     else
+      @sidebar = load_sidebar
       render 'edit'
     end
   end
