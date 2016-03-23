@@ -40,3 +40,4 @@ user.posts.create!(title: 'UT MAGNA NULLA, FERMENTUM',
                                Suspendisse potenti.",
                      created_at: time_rand(Time.zone.local(2012, 1, 1), Time.zone.local(2016, 2, 20)))
 end
+AppConfig.create!

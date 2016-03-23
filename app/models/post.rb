@@ -1,6 +1,7 @@
 # class Post < ActiveRecord::Base
 class Post < ActiveRecord::Base
   belongs_to :user
+  before_save :reset_sidebar_token
 
   validates :title, presence: true
   validates :content, presence: true
@@ -40,5 +41,11 @@ class Post < ActiveRecord::Base
 
   def self.load_to_home(year, month, page)
     Post.from_year(year).from_month(month).order_by_created_at.page page
+  end
+
+  private
+
+  def reset_sidebar_token
+    AppConfig.refresh_sidebar_mark
   end
 end
