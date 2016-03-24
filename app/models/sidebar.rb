@@ -10,6 +10,11 @@ class Sidebar
     @popular_posts = popular_posts || load_popular_posts
   end
 
+  def self.new_from_cookie(cookie)
+    sidebar_cookie = JSON.parse(cookie, symbolize_names: true)[:sidebar]
+    new(sidebar_cookie[:new_posts], sidebar_cookie[:posts_counts_by_years])
+  end
+
   private
 
   def load_new_posts
@@ -17,7 +22,7 @@ class Sidebar
   end
 
   def load_popular_posts
-
+    # to do ...
   end
 
   def load_posts_counts_by_years
