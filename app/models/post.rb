@@ -2,6 +2,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   before_save :reset_sidebar_token
+  before_destroy :reset_sidebar_token
 
   validates :title, presence: true
   validates :content, presence: true
