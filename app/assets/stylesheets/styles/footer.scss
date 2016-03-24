@@ -1,53 +1,77 @@
 footer {
   background-color: $light-black;
-  color: $white;
+  color: $author-color;
   display: block;
   font-family: 'Dosis';
-
-  height: 160px;
   font-size: 14px;
-}
+  height: 200px;
 
-.footer-content {
-  margin: 0 auto;
-  width: 85%;
-}
-
-.footer-menus {
-  display: flex;
-  font-style: italic;
-  justify-content: space-around;
-  letter-spacing: 2px;
-  line-height: 25px;
-
-  h2 {
-    color: $main-color;
-    margin-bottom: 0;
-  }
-
-  li {
-    color: $main-color;
-    list-style: square;
-  }
-
-  a {
-    color: $white;
-    text-decoration: none;
-
-    &:hover {
-      color: lighten($title-background, 20%);
-    }
+  .footer-content {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    width: 85%;
   }
 }
 
 .author {
+  float: left;
+  width: 700px;
+
+  .author-face {
+    display: inline-block;
+    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+    text-align: center;
+    width: 150px;
+
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+  }
+
+  .author-description {
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-left: 40px;
+    text-align: justify;
+    width: 450px;
+  }
+}
+
+.stats {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-left: 750px;
+  min-width: 500px;
+  text-transform: uppercase;
+
+  p {
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 500px;
+
+    span {
+      color: $white;
+      font-style: italic;
+    }
+  }
+}
+
+.created-by {
+  bottom: 20px;
   color: $author-color;
   font-family: 'Orbitron';
   font-size: 10px;
   font-style: italic;
   font-weight: 900;
   letter-spacing: 1px;
-  margin-bottom: 10px;
-  text-align: right;
-
+  position: absolute;
+  right: 0;
 }

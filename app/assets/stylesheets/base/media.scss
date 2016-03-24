@@ -1,0 +1,22 @@
+@media screen and (max-width: 1300px) {
+  .author {
+    float: none;
+  }
+
+  .stats {
+    margin-left: 0;
+    padding-top: 50px;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .sidebar-placeholder {
+    display: none;
+  }
+
+  .yield-placeholder {
+    width: 100%;
+  }
+}
