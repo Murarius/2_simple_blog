@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
               'December' => '12' }
 
   scope :order_by_created_at, -> { order('created_at DESC') }
-  scope :new_posts, -> { select('id, title, created_at').order('created_at').limit(5) }
+  scope :new_posts, -> { select('id, title, created_at').order('created_at DESC').limit(5) }
   scope :from_year, ->(year = nil) { where("to_char(created_at, 'YYYY') = ?", year.to_s) if year }
   scope :from_month, ->(month = nil) { where("to_char(created_at, 'MM') = ?", @months[month]) if month }
 
