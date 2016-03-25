@@ -11,7 +11,7 @@ class Sidebar
   end
 
   def self.new_from_cookie(cookie)
-    sidebar_cookie = JSON.parse(cookie, symbolize_names: true)[:sidebar]
+    sidebar_cookie = JSON.parse(cookie, symbolize_names: true)
     new(sidebar_cookie[:new_posts], sidebar_cookie[:posts_counts_by_years])
   end
 

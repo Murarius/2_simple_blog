@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def sidebar_to_cookie(sidebar)
-    cookies[:sidebar] = render_to_string(template: 'sidebar/sidebar.json.jbuilder', locals: { sidebar: sidebar })
+    cookies[:sidebar] = sidebar.to_json
   end
 
   def sidebar_mark_to_cookie
