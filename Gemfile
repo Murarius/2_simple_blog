@@ -18,6 +18,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'haml-rails'
+gem 'fog-aws'
+gem 'fog'
 
 # gem 'client_side_validations', '~> 4.2.0'
 # Use ActiveModel has_secure_password
