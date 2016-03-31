@@ -34,7 +34,7 @@
 }
 
 .sidebar-content-placeholder {
-  background-image: url('border-sidebar.svg');
+  background-image: asset-url('border-sidebar.svg');
   background-repeat: repeat-y;
   box-shadow: -8px 0 0 0 $main-color;
   box-sizing: border-box;

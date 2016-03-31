@@ -1,6 +1,6 @@
 .main {
   background-color: $white;
-  background-image: url('body-background.svg');
+  background-image: asset-url('body-background.svg');
   background-repeat: repeat;
   box-shadow: inset 80px 0 70px -70px rgba($black, .4),
               inset -80px 0 70px -70px rgba($black, .4);
@@ -19,7 +19,7 @@
 }
 
 .footer-border {
-  background-image: url('footer-border-black.svg');
+  background-image: asset-url('footer-border-black.svg');
   background-repeat: repeat-x;
   bottom: 0;
   height: 10px;

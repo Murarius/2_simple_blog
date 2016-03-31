@@ -14,11 +14,9 @@ body {
 
   a {
     background-color: darken($white, 10%);
-    border: {
-      color: $title-background;
-      style: solid;
-      width: 4px 20px 4px 4px;
-    }
+    border-color: $title-background;
+    border-style: solid;
+    border-width: 4px 20px 4px 4px;
     box-sizing: border-box;
     color: $title-background;
     display: block;
