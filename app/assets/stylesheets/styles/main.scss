@@ -8,6 +8,13 @@
   position: relative;
 }
 
+// Target Firefox only 
+@-moz-document url-prefix() {
+  .main {
+    box-shadow: none;
+  }
+}
+
 .main-content {
   background-color: $white;
   box-shadow: 5px 0 15px 8px rgba($black, .2),
