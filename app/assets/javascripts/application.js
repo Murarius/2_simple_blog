@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require ckeditor/init
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
