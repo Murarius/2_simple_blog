@@ -1,6 +1,7 @@
 # class Post < ActiveRecord::Base
 class Post < ActiveRecord::Base
   belongs_to :user
+  has_many :comments
   before_save :reset_sidebar_token
   before_destroy :reset_sidebar_token
 

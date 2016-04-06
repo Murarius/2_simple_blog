@@ -7,6 +7,7 @@ RSpec.describe Post, type: :model do
     expect(subject).to respond_to(:more_content)
     expect(subject).to respond_to(:created_at)
     expect(subject).to respond_to(:user)
+    expect(subject).to respond_to(:comments)
   end
 
   describe 'to be valid' do
