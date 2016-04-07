@@ -11,4 +11,10 @@ FactoryGirl.define do
     sequence(:more_content) { |n| "More post content #{n}" }
     user
   end
+
+  factory :comment do
+    sequence(:author) { |n| "comment author #{n}" }
+    sequence(:content) { |n| "comment content #{n}" }
+    post
+  end
 end
