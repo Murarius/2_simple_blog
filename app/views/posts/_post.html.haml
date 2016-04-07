@@ -10,11 +10,15 @@
     %div{ style: 'clear:both' }
   - if request.env['PATH_INFO'] == '/'
     = link_to('Read more..', post, class: 'read-more') unless post.more_content.try(:empty?)
+    %div.comments-count
+      comments
+      %span= "(#{post.comments_count})"
   - else
     .post-content
       = @post.more_content.html_safe
       %div{ style: 'clear:both' }
+      = react_component('Comments', comments: post.comments)
     = link_to root_path, class: 'button' do
       %i.fa.fa-chevron-left
-      Back to Posts
+      Back to posts
   = render('posts/controll_buttons', post: post) if user_signed_in?
