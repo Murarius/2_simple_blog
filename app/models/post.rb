@@ -41,8 +41,15 @@ class Post < ActiveRecord::Base
       .order('month_number')
   end
 
-  def self.load_to_home(year, month, page)
-    Post.from_year(year).from_month(month).order_by_created_at.page page
+  def self.load_to_home(year = nil, month = nil, page = nil)
+    # Post.from_year(year).from_month(month).order_by_created_at.page page
+    Post.joins('left outer join comments on comments.post_id = posts.id')
+        .select('posts.id, posts.created_at, posts.title, posts.content,
+                posts.more_content, posts.created_at, count(comments.id) as comments_count')
+        .group('posts.id, posts.created_at, posts.title, posts.content, posts.more_content, posts.created_at')
+        .from_year(year)
+        .from_month(month)
+        .order_by_created_at.page page
   end
 
   private
