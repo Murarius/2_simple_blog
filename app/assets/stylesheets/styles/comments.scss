@@ -1,0 +1,46 @@
+.comments-count {
+  background-color: $comments-count-background-color;
+  box-shadow: 0 0 10px 0 $light-black;
+  color: $white;
+  display: inline-block;
+  float: right;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.comments {
+
+}
+
+.comment {
+
+  .comment-header {
+    width: 100%;
+    .comment-author {
+      font-size: .8em;
+      display: inline-block;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .comment-created_at {
+      color: grey;
+      font-size: 0.8em;
+      text-align: right;
+      display: inline-block;
+
+      border-bottom: 1px dotted #ccc;
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+  }
+
+  .comment-content {
+
+  }
+
+
+}
