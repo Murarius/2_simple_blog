@@ -15,32 +15,52 @@
 }
 
 .comment {
+  border-bottom: 1px dotted $comment-border-color;
 
   .comment-header {
     width: 100%;
+
     .comment-author {
-      font-size: .8em;
       display: inline-block;
-      text-transform: uppercase;
+      font-size: .8em;
       font-weight: bold;
       margin-right: 10px;
+      text-transform: uppercase;
     }
 
-    .comment-created_at {
-      color: grey;
-      font-size: 0.8em;
-      text-align: right;
+    .comment-created-at {
+      color: $comment-created-at-color;
       display: inline-block;
-
-      border-bottom: 1px dotted #ccc;
+      font-size: .8em;
       font-style: italic;
       letter-spacing: 1px;
+      text-align: right;
     }
   }
 
   .comment-content {
+    margin-left: 15px;
+    padding: 5px;
+  }
+}
 
+.add-comment {
+  margin-bottom: 80px;
+  text-align: right;
+
+  .new-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+
+    input {
+      width: 50%;
+    }
   }
 
-
+  .button {
+    cursor: pointer;
+    font-size: .8em;
+    margin: 0;
+    width: 120px;
+  }
 }

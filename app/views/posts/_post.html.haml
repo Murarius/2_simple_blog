@@ -17,7 +17,7 @@
     .post-content
       = @post.more_content.html_safe
       %div{ style: 'clear:both' }
-      = react_component('Comments', comments: post.comments)
+      = react_component('Comments', comments: post.comments, postId: post.id)
     = link_to root_path, class: 'button' do
       %i.fa.fa-chevron-left
       Back to posts
