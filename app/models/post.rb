@@ -23,20 +23,20 @@ class Post < ActiveRecord::Base
               'December' => '12' }
 
   scope :order_by_created_at, -> { order('created_at DESC') }
-  scope :new_posts, -> { select('id, title, created_at').order('created_at DESC').limit(5) }
-  scope :from_year, ->(year = nil) { where("to_char(created_at, 'YYYY') = ?", year.to_s) if year }
-  scope :from_month, ->(month = nil) { where("to_char(created_at, 'MM') = ?", @months[month]) if month }
+  scope :new_posts, -> { select('posts.id, posts.title, posts.created_at').order('posts.created_at DESC').limit(5) }
+  scope :from_year, ->(year = nil) { where("to_char(posts.created_at, 'YYYY') = ?", year.to_s) if year }
+  scope :from_month, ->(month = nil) { where("to_char(posts.created_at, 'MM') = ?", @months[month]) if month }
 
   scope :counts_by_years, -> do
-    select("to_char(created_at, 'YYYY') as year, count(*) as count")
+    select("to_char(posts.created_at, 'YYYY') as year, count(*) as count")
       .group('year')
       .order('year DESC')
   end
 
   scope :counts_by_months, ->(year) do
-    select("regexp_replace(to_char(created_at, 'Month'), '\s+$', '') as month,
-            to_char(created_at, 'MM') as month_number, count(*) as count")
-      .where("to_char(created_at, 'YYYY') = ?", year.to_s)
+    select("regexp_replace(to_char(posts.created_at, 'Month'), '\s+$', '') as month,
+            to_char(posts.created_at, 'MM') as month_number, count(*) as count")
+      .where("to_char(posts.created_at, 'YYYY') = ?", year.to_s)
       .group('month, month_number')
       .order('month_number')
   end
