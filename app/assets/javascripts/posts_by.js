@@ -23,7 +23,7 @@ function handleLoadMonthsCountsError(request, errorType, errorMessage){
 function loadMonthsCounts(button){
   var toMonthsCountsLink = button;
   var year=$(toMonthsCountsLink).attr('id');
-  $.ajax('posts_by/'+year, {
+  $.ajax('/posts_by/'+year, {
     success: function(response) {
       renderMonthsCounts(response, $(toMonthsCountsLink).parent());
       animateButton(toMonthsCountsLink);
@@ -42,7 +42,6 @@ function loadMonthsCounts(button){
 $(function() {
   $('.sidebar').on('click', '.months', function(e){
     e.preventDefault();
-    console.log($(this).attr('class'));
     if ($(this).attr('class') == 'months rotate') {
       animateButton(this);
       var monthsCountsMenu = $(this).parent().find('ul');
