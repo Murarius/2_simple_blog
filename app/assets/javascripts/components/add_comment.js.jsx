@@ -1,7 +1,8 @@
 var AddComment = React.createClass({
   propTypes: {
     postId: React.PropTypes.number,
-    handleNewComment: React.PropTypes.func
+    handleNewComment: React.PropTypes.func,
+    handleNewCommentError: React.PropTypes.func
   },
   _newCommentData: function() {
     return ({post_id: this.props.postId,
@@ -18,15 +19,17 @@ var AddComment = React.createClass({
      data: { comment: comment },
      dataType: 'JSON',
      success: function(comment) {
-       console.log(comment);
-       console.log(self.props);
+       self._clearCommentForm();
        self.props.handleNewComment(comment);
      },
      error: function(commentErrors) {
-       console.log(commentErrors);
-       // incomplette !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+       self.props.handleNewCommentError(commentErrors);
      }
    });
+  },
+  _clearCommentForm: function() {
+    this.refs.author.value = null;
+    this.refs.content.value = null;
   },
   render: function() {
     return (
