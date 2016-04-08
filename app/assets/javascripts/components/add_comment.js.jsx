@@ -35,10 +35,10 @@ var AddComment = React.createClass({
     return (
       <div className='add-comment'>
         <div className='new-author'>
-          <span>Author: </span><input ref='author'></input>
+          <span>Author: </span><input id='input-author' ref='author'></input>
         </div>
-        <textarea ref='content' rows='4'></textarea>
-        <a onClick={this._addComment} className='button'>Add Comment</a>
+        <textarea id='input-content' ref='content' rows='4'></textarea>
+        <a href='#' onClick={this._addComment} className='button'>Add Comment</a>
       </div>
     );
   }
