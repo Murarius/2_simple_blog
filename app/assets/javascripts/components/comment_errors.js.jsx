@@ -1,5 +1,4 @@
 var CommentErrors = React.createClass({
-
   propTypes: {
     commentErrors: React.PropTypes.object
   },
