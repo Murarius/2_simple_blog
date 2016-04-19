@@ -21,6 +21,7 @@ gem 'haml-rails', '0.9.0'
 gem 'fog-aws', '0.8.1'
 gem 'fog', '1.37.0'
 gem 'react-rails', '~> 1.6.0'
+gem 'dotenv-rails'
 
 # gem 'client_side_validations', '~> 4.2.0'
 # Use ActiveModel has_secure_password
