@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   resources :posts, except: :index
   resources :comments, only: [:create, :destroy]
   get 'posts_by/:year', to: 'posts_by#year_posts_months_counts'
+
+  scope :auth do
+    get 'is_signed_in', to: 'auth#is_signed_in?'
+  end
 end
