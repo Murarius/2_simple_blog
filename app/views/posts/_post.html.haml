@@ -21,4 +21,5 @@
     = link_to root_path, class: 'button' do
       %i.fa.fa-chevron-left
       Back to posts
+  %div{style: 'clear:both'}
   = render('posts/controll_buttons', post: post) if user_signed_in?

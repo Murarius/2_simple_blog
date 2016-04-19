@@ -9,8 +9,18 @@ var Comments = React.createClass({
       postId: this.props.postId,
       comments: this.props.comments,
       commentsCount: this.props.comments.length,
-      commentErrors: null
+      commentErrors: null,
+      loggedIn: null
     };
+  },
+  componentWillMount: function() {
+    this._checkIfLoggedIn();
+  },
+  _checkIfLoggedIn: function() {
+    var self = this;
+    $.get( '/auth/is_signed_in', function( data ) {
+      self.setState({loggedIn: data.signed_in});
+    });
   },
   _handleNewCommentError: function(errors) {
     this.setState({commentErrors: JSON.parse(errors.responseText)})
@@ -18,6 +28,12 @@ var Comments = React.createClass({
   _handleNewComment: function(comment) {
     var comments = this.state.comments;
     comments.push(comment);
+    this.setState({comments: comments, commentsCount: comments.length, commentErrors: null});
+  },
+  _handleDelete: function(comment) {
+    var comments = this.state.comments;
+    var index = comments.indexOf(comment);
+    comments.splice(index, 1);
     this.setState({comments: comments, commentsCount: comments.length, commentErrors: null});
   },
   render: function() {
@@ -30,7 +46,10 @@ var Comments = React.createClass({
                     handleNewComment={this._handleNewComment}
                     handleNewCommentError={this._handleNewCommentError}></AddComment>
         {this.state.comments.map(function(comment) {
-          return (<Comment comment={comment} key={comment.id}></Comment>);
+          return (<Comment comment={comment}
+                           key={comment.id}
+                           loggedIn={self.state.loggedIn}
+                           handleDelete={self._handleDelete}></Comment>);
         })}
       </div>
     );

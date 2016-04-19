@@ -11,7 +11,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-
+    comment = Comment.find(params[:id])
+    comment.delete
+    render nothing: true, status: 204
   end
 
   private
