@@ -30,4 +30,40 @@ RSpec.describe CommentsController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    # before { post :create, comment: { post_id: @post.id, author: 'author', content: 'content' } }
+    let!(:comment) { FactoryGirl.create(:comment, post_id: @post.id) }
+    describe 'not logged in' do
+      it 'does not delete comment' do
+        expect do
+          delete :destroy, id: comment.id
+        end.to change(Comment, :count).by(0)
+      end
+
+      it 'redirects to login' do
+        delete :destroy, id: comment.id
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+
+    describe 'logged in' do
+      let!(:comment) { FactoryGirl.create(:comment, post_id: @post.id) }
+
+      before do
+        log_in(@post.user, no_capybara: true)
+      end
+
+      it 'deletes comment' do
+        expect do
+          delete :destroy, id: comment.id
+        end.to change(Comment, :count).by(-1)
+      end
+
+      it 'responds with status' do
+        delete :destroy, id: comment.id
+        expect(response).to have_http_status(204)
+      end
+    end
+  end
 end

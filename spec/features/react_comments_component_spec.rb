@@ -38,7 +38,7 @@ RSpec.feature 'ReactCommentsComponent', type: :feature do
         fill_in('input-author', with: 'new author')
         fill_in('input-content', with: 'new content')
         click_link('Add Comment')
-        sleep(2)
+        sleep(1)
         expect(page).to have_content(Comment.first.content)
       end
 
@@ -49,7 +49,7 @@ RSpec.feature 'ReactCommentsComponent', type: :feature do
         fill_in('input-author', with: 'new author')
         fill_in('input-content', with: 'new content')
         click_link('Add Comment')
-        sleep(2)
+        sleep(1)
         expect(Comment.all.count).to eq 1
         expect(page).to have_content("Comments: #{Post.first.comments.count}")
       end
@@ -61,7 +61,7 @@ RSpec.feature 'ReactCommentsComponent', type: :feature do
         expect(page).to have_content('Comments: 0')
         fill_in('input-content', with: 'new content')
         click_link('Add Comment')
-        sleep(2)
+        sleep(1)
         expect(page).to have_content('Comments: 0')
       end
 
@@ -70,7 +70,7 @@ RSpec.feature 'ReactCommentsComponent', type: :feature do
         expect do
           fill_in('input-content', with: 'new content')
           click_link('Add Comment')
-          sleep(2)
+          sleep(1)
         end.to change(Comment.all, :count).by 0
       end
 
@@ -80,11 +80,49 @@ RSpec.feature 'ReactCommentsComponent', type: :feature do
         visit post_path(post.id)
         fill_in('input-content', with: 'new content')
         click_link('Add Comment')
-        sleep(2)
+        sleep(1)
         tmp_comment.errors.each do |key, value|
           expect(page).to have_content(key)
           expect(page).to have_content(value)
         end
+      end
+    end
+  end
+
+  describe 'delete comment', js: true do
+    let!(:comment) { FactoryGirl.create(:comment) }
+
+    describe 'when logged in' do
+      before do
+        login_as(comment.post.user, scope: :user, run_callbacks: false)
+        visit post_path(comment.post.id)
+      end
+
+      it 'delete link is visible' do
+        sleep(1)
+        expect(page).to have_selector(:css, '.delete-comment')
+      end
+
+      it 'removes comment' do
+        sleep(1)
+        expect(page).to have_content(comment.content)
+        find('a.delete-comment').click
+        expect(page).not_to have_content(comment.content)
+      end
+
+      it 'changes comments counter' do
+        sleep(1)
+        expect(page).to have_content('Comments: 1')
+        find('a.delete-comment').click
+        expect(page).to have_content('Comments: 0')
+      end
+    end
+
+    describe 'when not logged in' do
+      it 'buttons not visible' do
+        visit post_path(comment.post.id)
+        sleep(1)
+        expect(page).not_to have_selector(:css, '.delete-comment')
       end
     end
   end
